@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers\Api\Restaurant;
 
-use App\Comment;
-use App\CommentLike;
-use App\Customer;
+use App\Models\Comment;
+use App\Models\CommentLike;
+use App\Models\Customer;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Account\ChangePasswordRequest;
 use App\Http\Requests\Account\LoginRequest;
 use App\Http\Requests\Account\RegisterRequest;
-use App\Restaurant;
-use App\RestaurantDetail;
-use App\Similarity;
+use App\Models\Restaurant;
+use App\Models\RestaurantDetail;
+use App\Models\Similarity;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -264,7 +264,7 @@ class RestaurantController extends Controller
 
     }
     public function getSuggestedRes(Request $request){
-        $res= Restaurant::where('status',1)->with(['restaurant_detail:res_id,open_time'])->orderBy('AvgRating','DESC')->take(10)->get();
+        $res= Restaurant::where('status',1)->with(['restaurant_detail:res_id,open_time'])->orderBy('AvgRating','DESC')->take(8)->get();
         return [
             'success' => true,
             'data' => $res

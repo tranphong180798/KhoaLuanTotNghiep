@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -24,9 +24,9 @@ class Comment extends Model
     ];
 
     public function comment_pictures(){
-        return $this->hasMany('App\CommentPicture','CommentId','Id');
+        return $this->hasMany('App\Models\CommentPicture','CommentId','Id');
     }
     public function customer(){
-        return $this->belongsTo('App\Customer','Owner_id','Id');
+        return $this->belongsTo('App\Models\Customer','Owner_id','Id');
     }
 }

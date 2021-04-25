@@ -2,9 +2,9 @@
 
 namespace App\Console\Commands;
 
-use App\Comment;
-use App\Customer;
-use App\Restaurant;
+use App\Models\Comment;
+use App\Models\Customer;
+use App\Models\Restaurant;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 

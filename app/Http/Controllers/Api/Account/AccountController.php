@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Api\Account;
 
-use App\Comment;
-use App\Customer;
+use App\Models\Comment;
+use App\Models\Customer;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Account\ChangePasswordRequest;
 use App\Http\Requests\Account\LoginRequest;
 use App\Http\Requests\Account\RegisterRequest;
-use App\Restaurant;
+use App\Models\Restaurant;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;

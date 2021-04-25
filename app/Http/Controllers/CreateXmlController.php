@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Restaurant;
+use App\Models\Restaurant;
 use Illuminate\Http\Request;
-use DOMDocument;
 class CreateXmlController extends Controller
 {
     public function create(){

@@ -2,8 +2,8 @@
 
 namespace App\Console\Commands;
 
-use App\Restaurant;
-use App\RestaurantDetail;
+use App\Models\Restaurant;
+use App\Models\RestaurantDetail;
 use Illuminate\Console\Command;
 
 class UpdateTimeAndPrice extends Command

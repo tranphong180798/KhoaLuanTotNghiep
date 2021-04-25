@@ -12,17 +12,21 @@
     <div >
       <v-img height="200" :src="restaurant.PhotoUrl" />
     </div>
-    <v-card-title class="font-weight-bold red--text" style="width: 220px;overflow: hidden;text-overflow: ellipsis">{{restaurant.name_summary}}</v-card-title>
+    <v-card-title class="font-weight-bold red--text" style="width: 220px;overflow: hidden;text-overflow: ellipsis">
+      <nuxt-link :to="`web/res-detail/${restaurant.Id}`"> {{restaurant.name_summary}}</nuxt-link>
+     </v-card-title>
     <v-card-subtitle >
-      <div class="d-flex">
+      <div class="d-flex" v-if="restaurant.restaurant_detail!==null">
         <p><v-icon class="blue--text">mdi-calendar-clock</v-icon> {{restaurant.restaurant_detail.open_time}}</p>
-
+      </div>
+      <div class="d-flex" v-else>
+        <p><v-icon class="blue--text">mdi-calendar-clock</v-icon> ?</p>
       </div>
       <p ><v-icon class="blue--text">mdi-map-marker</v-icon> {{restaurant.address_summary}}</p>
     </v-card-subtitle>
     <v-chip-group  style="margin-left: 45px ;position: absolute;bottom: -50px;">
       <v-chip color="teal darken-1" class="white--text" label
-      >{{ restaurant.isChoThue == 1 ? 'Cho thuê' : 'Rao bán' }}
+      >Rao bán
       </v-chip>
       <v-chip color="deep-orange accent-3 " class="white--text" label>Nổi bật</v-chip>
     </v-chip-group>
@@ -34,7 +38,7 @@ export default {
 name: "RestaurantDetail",
   props: {
     restaurant: {
-      default: null,
+      default: {},
     },
   },
   data: () => ({
@@ -49,7 +53,7 @@ name: "RestaurantDetail",
     },
   },
   created() {
-  console.log(this.restaurant);
+
   }
 }
 </script>

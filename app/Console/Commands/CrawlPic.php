@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\CommentPicture;
+use App\Models\CommentPicture;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 

@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Web;
 
-use App\Category;
-use App\Comment;
+use App\Models\Category;
+use App\Models\Comment;
 use App\Http\Controllers\Controller;
-use App\Restaurant;
-use App\RestaurantDetail;
+use App\Models\Restaurant;
+use App\Models\RestaurantDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -41,26 +41,37 @@ class WebController extends Controller
         return view('Web.Pages.new-res',$args);
     }
     public function index(Request $request){
-        $new_res = Restaurant::with(['restaurant_detail'])->take(10)->get();
+        $new_res = Restaurant::with(['restaurant_detail'])->take(8)->get();
         $args = [
             'new_res' => $new_res
         ];
-
+        if($request->wantsJson())
+        {
+            return response()->json([
+                'data'=>$new_res
+            ], 200);
+        }
         return view('Web.index',$args);
     }
     public function getDetail(Request $request){
         $res = Restaurant::where('Id',$request->id)->with(['restaurant_detail'=>function($q){
             $q->with(['category']);
         }])->first();
-        if(!$res){
-            abort(404);
-        }
-
         $comments = Comment::where('ResId',$res['Id'])->with(['comment_pictures:CommentId,Url,IsFoody','customer:Id,DisplayName,Avatar,IsFoody'])->paginate(10);
         $args = [
             'res' => $res,
             'comments' => $comments,
         ];
+        if($request->wantsJson())
+        {
+            return response()->json($args,200);
+        }
+        if(!$res){
+            abort(404);
+        }
+
+
+
         return view('Web.Pages.res-detail',$args);
     }
     public function getNearest($long='',$lat='',$limit=20){

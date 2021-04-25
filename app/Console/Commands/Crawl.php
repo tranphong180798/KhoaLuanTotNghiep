@@ -2,11 +2,11 @@
 
 namespace App\Console\Commands;
 
-use App\Category;
-use App\Restaurant;
-use App\RestaurantDetail;
+use App\Models\Category;
+use App\Models\Restaurant;
+use App\Models\RestaurantDetail;
 use App\Scraper\Foody;
-use App\TargetCustomer;
+use App\Models\TargetCustomer;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 

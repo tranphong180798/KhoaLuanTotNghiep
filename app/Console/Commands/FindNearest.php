@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Restaurant;
+use App\Models\Restaurant;
 use Illuminate\Console\Command;
 
 class FindNearest extends Command

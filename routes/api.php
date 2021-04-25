@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Web\WebController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -54,4 +55,4 @@ Route::group(['middleware'=>'locale'],function () {
     });
 });
 
-Route::get('/newListRestaurant', 'WebController@index')->name('user.index');
+Route::get('/newListRestaurant', [WebController::class,'index']);

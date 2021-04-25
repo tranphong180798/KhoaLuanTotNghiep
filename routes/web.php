@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Web\WebController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,7 +28,7 @@ Route::group(['middleware'=>'locale'],function (){
 
         Route::get('/', 'WebController@index')->name('user.index');
 
-        Route::get('res-detail/{id}', 'WebController@getDetail');
+        Route::get('res-detail/{id}', [WebController::class,'getDetail']);
 
         Route::get('more-res/{type}', 'WebController@moreRes');
 

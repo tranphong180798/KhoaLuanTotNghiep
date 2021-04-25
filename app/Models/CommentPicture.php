@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -13,7 +13,7 @@ class CommentPicture extends Model
     protected $fillable = ['Url','CommentId','IsFoody'];
 
     public function comment(){
-        return $this->belongsTo('App\Comment','CommentId','Id');
+        return $this->belongsTo('App\Models\Comment','CommentId','Id');
     }
 
 }

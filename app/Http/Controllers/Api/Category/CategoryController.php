@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers\Api\Category;
 
-use App\Category;
-use App\Comment;
-use App\CommentLike;
-use App\CommentPicture;
-use App\Customer;
+use App\Models\Category;
+use App\Models\Comment;
+use App\Models\CommentLike;
+use App\Models\CommentPicture;
+use App\Models\Customer;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Account\ChangePasswordRequest;
 use App\Http\Requests\Account\LoginRequest;
 use App\Http\Requests\Account\RegisterRequest;
 use App\Http\Requests\Comment\CreateCommentRequest;
-use App\Report;
-use App\Restaurant;
+use App\Models\Report;
+use App\Models\Restaurant;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;

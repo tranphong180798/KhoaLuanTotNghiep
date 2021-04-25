@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 
 
@@ -57,7 +57,7 @@ class Customer extends Model implements
     }
 
     public function comments(){
-        return $this->hasMany('App\Comment','Owner_id','Id');
+        return $this->hasMany('App\Models\Comment','Owner_id','Id');
     }
 
     public function getJWTIdentifier()

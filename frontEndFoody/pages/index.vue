@@ -235,7 +235,7 @@
                     color="white"
                     class="ma-6 ml-5"
                     width="275"
-                    height="450"
+                    height="470"
                   >
                     <RestaurantDetail :restaurant="restaurant"  />
                   </v-card>

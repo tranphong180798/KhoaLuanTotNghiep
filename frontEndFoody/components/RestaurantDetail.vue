@@ -12,11 +12,11 @@
     <div >
       <v-img height="200" :src="restaurant.PhotoUrl" />
     </div>
-    <v-card-title class="font-weight-bold red--text" style="width: 220px;overflow: hidden;text-overflow: ellipsis">
-      <nuxt-link :to="`web/res-detail/${restaurant.Id}`"> {{restaurant.name_summary}}</nuxt-link>
+    <v-card-title class="font-weight-bold red--text" style="height:100px">
+      <nuxt-link :to="`web/res-detail/${restaurant.Id}`"　 > {{restaurant.name_summary}}</nuxt-link>
      </v-card-title>
     <v-card-subtitle >
-      <div class="d-flex" v-if="restaurant.restaurant_detail!==null">
+      <div class="d-flex" v-if="restaurant.restaurant_detail!==null" style="height:50px">
         <p><v-icon class="blue--text">mdi-calendar-clock</v-icon> {{restaurant.restaurant_detail.open_time}}</p>
       </div>
       <div class="d-flex" v-else>
@@ -45,6 +45,7 @@ name: "RestaurantDetail",
     loading: false,
     selection: 1,
   }),
+
   methods: {
     reserve() {
       this.loading = true
@@ -52,7 +53,7 @@ name: "RestaurantDetail",
       setTimeout(() => (this.loading = false), 2000)
     },
   },
-  created() {
+  mounted() {
 
   }
 }

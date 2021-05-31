@@ -460,10 +460,11 @@
         }
     </script>
     <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzlVX517mZWArHv4Dt3_JVG0aPmbSE5mE&callback=initMapToChoose" async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtfmC9vHjBsAX-Jr_-GPlXYlyUPt74KVw&callback=initMapToChoose" async
         defer>
     </script>
     <script defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzlVX517mZWArHv4Dt3_JVG0aPmbSE5mE&callback=initMap2">
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtfmC9vHjBsAX-Jr_-GPlXYlyUPt74KVw&callback=initMap2">
     </script>
 @endsection
+

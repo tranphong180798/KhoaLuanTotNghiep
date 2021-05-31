@@ -44,6 +44,9 @@ export default {
     {src:'https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js'},
     {src:'https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css'},
     {src:'/js/myjs/helper.js'},
+    {
+      src:"https://maps.googleapis.com/maps/api/js?key=AIzaSyCzlVX517mZWArHv4Dt3_JVG0aPmbSE5mE&callback=initMap",
+    }
 
 
   ],
